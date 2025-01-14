@@ -1,3 +1,6 @@
+const huggingFaceKey = process.env.HUGGING_FACE_KEY;
+console.log('huggingFaceKey', huggingFaceKey)
+
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { prompt } = req.body;
@@ -11,7 +14,7 @@ export default async function handler(req, res) {
             const response = await fetch('https://api-inference.huggingface.co/models/gpt2', {
                 method: 'POST',
                 headers: {
-                    Authorization: `Bearer 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`,
+                    Authorization: `Bearer ${huggingFaceKey}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
