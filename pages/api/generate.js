@@ -1,5 +1,7 @@
 const huggingFaceKey = process.env.HUGGING_FACE_KEY;
+const huggingFaceUrl = process.env.HUGGING_FACE_URL;
 console.log('huggingFaceKey', huggingFaceKey)
+console.log('huggingFaceUrl', huggingFaceUrl)
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -11,7 +13,7 @@ export default async function handler(req, res) {
 
         try {
             // Call Hugging Face Inference API
-            const response = await fetch('https://api-inference.huggingface.co/models/gpt2', {
+            const response = await fetch(huggingFaceUrl, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${huggingFaceKey}`,
