@@ -1,7 +1,5 @@
 const huggingFaceKey = process.env.HUGGING_FACE_KEY;
 const huggingFaceUrl = process.env.HUGGING_FACE_URL;
-console.log('huggingFaceKey', huggingFaceKey)
-console.log('huggingFaceUrl', huggingFaceUrl)
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {

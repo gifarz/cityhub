@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apply default font size globally */
+html {
+  @apply text-base; /* Uses the `fontSize.base` from tailwind.config.js */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #1B1B1B;
